@@ -78,8 +78,8 @@ Demo.Views.Feed = Backbone.View.extend({
 	render: function() {
 		var feed_class = (this.options.odd? "feed-odd" : "feed-even");
 		$(this.el).append('<div class="' + feed_class + '">' +
-							this.model.get("text") +
-							"</div>");
+			                        this.model.get("entry_headline") +
+						"</div>");
 		return this;
 	}
 });
@@ -95,7 +95,7 @@ Demo.Views.Item = Demo.Views.Page.extend({
 
 	expand_item: function () {
 		// Open an external URL in a separate view
-		forge.tabs.open("https://twitter.com/triggercorp/status/"+this.model.get("id_str"));
+		forge.tabs.open(this.model.get("entry_url"));
 	},
 
 	initialize: function() {
@@ -107,20 +107,23 @@ Demo.Views.Item = Demo.Views.Page.extend({
 	},
 	
 	render: function() {
-		var author = this.model.get("contributors");
+		var author = this.model.get("author_name");
 		var author_line = (author ? " by " + author : "");
 
 		$(this.el).append('<div id="back", class="feed-even">Back</div>');
 		
 		$(this.el).append('<li id="item", class="feed-odd">' +
-							this.model.get("text") +
-							'<div class="author">' +
-								author_line +
-							'</div>' +
-							'<div class="date">' +
-								this.model.get("created_at").split(" ").slice(0, -2).join(" ") +
-							'</div>' +
-						  '</li>');
+				this.model.get("entry_headline") +
+				'<div class="author">' +
+				author_line +
+				'</div>' +
+				'<div class="date">' +
+				this.model.get("entry_extra_first_published_on") +
+				'</div>' +
+				'<div class="comment_count">' +
+				'Comments (' + this.model.get("entry_comment_count") + ')' +
+				'</div>' +
+				'</li>');
 		return this;
 	}
 });
