@@ -1,22 +1,43 @@
 {
-	"config_version": "2",
-	"name": "thehackerati-reader",
-	"author": "geoff@thehackerati.com",
-	"version": "0.1",
-	"platform_version": "v1.3",
-	"description": "An empty app created by default",
+	"author": "support@trigger.io", 
+	"config_version": "2", 
+	"description": "My Extension Description (built on WebMynd)", 
 	"modules": {
+		"activations": [
+			{
+				"patterns": [
+					"http://*/*"
+				], 
+				"scripts": [], 
+				"styles": [],
+				"run_at": "ready"
+			}
+		], 
+		"button": {
+			"default_icon": "img/logo-forge.png", 
+			"default_popup": "index.html"
+		}, 
+		"contact": true, 
+		"event": true, 
+		"file": true, 
+		"geolocation": true, 
+		"is": true, 
 		"logging": {
-			"level": "DEBUG"
-		},
-		"contact": true,
-		"file": true,
-		"is": true,
-		"media": true,
-		"prefs": true,
+			"level": "INFO"
+		}, 
+		"message": true, 
+		"notification": true, 
+		"prefs": true, 
 		"request": {
-			"permissions": ["http://*/*", "https://*/*"]
-		},
+			"permissions": [
+				"https://twitter.com/*"
+			]
+		}, 
+		"sms": true, 
+		"tabs": true, 
 		"tools": true
-	}
+	}, 
+	"name": "Demo", 
+	"platform_version": "v1.3", 
+	"version": "0.1"
 }
