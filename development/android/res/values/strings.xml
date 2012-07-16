@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">thehackerati-reader</string>
+    <string name="package_name">io.trigger.forge0cdcc9f2cefd11e1926712313d1adcbe</string>
+    <string name="payments_publicKey">PAYMENTS_PUBLIC_KEY_HERE</string>
+</resources>
