@@ -1,6 +1,15 @@
 thehackerati-reader
 ===================
 
+Third-Party Software
+--------------------
+
+* trigger.io
+* backbone.js
+* zepto.js
+* underscore.js
+*
+
 Running
 -------
 

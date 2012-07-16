@@ -9,6 +9,7 @@ var Demo = {
 		// Grab the Trigger twitter feed
 		forge.request.ajax({
 			url: "https://twitter.com/statuses/user_timeline/14972793.json",
+			url: "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=geoffscott",
 			dataType: "json",
 			success: showIndex
 		});
