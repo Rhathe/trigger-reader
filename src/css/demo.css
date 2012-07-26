@@ -23,9 +23,9 @@ body {
 	width: 320;
 	display: block;
 	min-height: 4px;
-	font: 16px tahoma, arial, helvetica;
-	background:#008299 url(http://docs.webmynd.com/en/latest/_static/f/bg-cross-hatching.png) repeat top left;	
-	color: white;
+	font: 12px tahoma, arial, helvetica;
+	background: #ffffff;
+	color: #000000;
 	text-shadow: 0 0 0 #fff;
 	letter-spacing:1px;
 	border-bottom: 1px solid;
@@ -38,9 +38,9 @@ body {
 	width: 320;
 	display: block;
     min-height: 4px;
-    font:16px tahoma, arial, helvetica;
-    background-color: #000;
-	color:#fff;
+    font:12px tahoma, arial, helvetica;
+    background-color: #eeeeee;
+	color: #000000;
     text-shadow: 0 0 0 #fff;
     letter-spacing:1px;
 	border-bottom: 1px solid;

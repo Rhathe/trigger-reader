@@ -1,16 +1,17 @@
 {
-	"author": "support@trigger.io", 
-	"config_version": "2", 
+	"author": "geoff@thehackerati.com", 
+	"config_version": "3", 
 	"description": "My Extension Description (built on WebMynd)", 
+	"homepage": "www.thehackerati.com", 
 	"modules": {
 		"activations": [
 			{
 				"patterns": [
 					"http://*/*"
 				], 
+				"run_at": "ready", 
 				"scripts": [], 
-				"styles": [],
-				"run_at": "ready"
+				"styles": []
 			}
 		], 
 		"button": {
@@ -28,16 +29,19 @@
 		"message": true, 
 		"notification": true, 
 		"prefs": true, 
+		"reload": true, 
 		"request": {
 			"permissions": [
 				"https://twitter.com/*"
 			]
 		}, 
 		"sms": true, 
+		"tabbar": true, 
 		"tabs": true, 
-		"tools": true
+		"tools": true, 
+		"topbar": true
 	}, 
-	"name": "Demo", 
-	"platform_version": "v1.3", 
+	"name": "trigger-reader", 
+	"platform_version": "v1.4", 
 	"version": "0.1"
 }

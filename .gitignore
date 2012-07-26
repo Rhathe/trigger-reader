@@ -1,3 +1,5 @@
 .DS_Store
 .template
+.*.swp
 development
+*.bak
