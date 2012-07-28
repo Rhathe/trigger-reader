@@ -9,7 +9,7 @@ var Demo = {
 		// Set a better title for the topbar
 		forge.topbar.setTitle("Huffington Post");
 
-		//
+		// Front-page button
 		var frontPageButton = forge.tabbar.addButton({
 			text: "Home",
 			icon: "img/53-house.png",
@@ -23,7 +23,7 @@ var Demo = {
 			alert("Front Page");
 		});
 
-		//
+		// Sections button
 		var sectionsButton = forge.tabbar.addButton({
 			text: "Sections",
 			icon: "img/166-newspaper.png",
@@ -34,7 +34,7 @@ var Demo = {
 			});
 		});
 
-		//
+		// Search button
 		var searchButton = forge.tabbar.addButton({
 			text: "Search",
 			icon: "img/06-magnify.png",
@@ -45,7 +45,7 @@ var Demo = {
 			});
 		});
 
-		//
+		// Favorites button
 		var favoritesButton = forge.tabbar.addButton({
 			text: "Favorites",
 			icon: "img/28-star.png",
@@ -56,7 +56,7 @@ var Demo = {
 			});
 		});
 
-		//
+		// Settings button
 		var settingsButton = forge.tabbar.addButton({
 			text: "Settings",
 			icon: "img/20-gear2.png",
@@ -78,9 +78,6 @@ var Demo = {
 		function showIndex(data) {
 			// Save away initial data, stripping off the 'entries' element in the HuffPo feed
 			Demo.items = new Demo.Collections.Items(data['entries']);
-
-                        // Now traverse the collection
-		        //Demo.items.each(function(feed_item, index){
 
 			// Set up Backbone
 			Demo.router = new Demo.Router();
