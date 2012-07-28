@@ -1,4 +1,4 @@
-thehackerati-reader
+trigger-reader
 ===================
 
 Trigger.io sample application built from this description: http://trigger.io/cross-platform-application-development-blog/2012/03/02/how-to-build-fast-html5-mobile-apps-using-backbone-js-zepto-js-and-trigger-io/, modified to read The Huffington Post JSON APIs.
@@ -10,6 +10,7 @@ Third-Party Software
 * backbone.js
 * zepto.js
 * underscore.js
+* Jasmine
 
 Install Trigger.io
 ------------------
@@ -26,6 +27,11 @@ Build It
 
     % forge build
 
+Test It
+-------
+
+Open SpecRunner.html in a browser to run the Jasmine unit tests.
+
 Run It
 ------
 
@@ -40,3 +46,8 @@ To launch the app in the Android Simulator (requires Android Simulator):
 To launch the app in the default browser (requires Node.js):
 
     $ forge run web
+
+Reload It
+---------
+
+Push code updates to devices without going through an app review process. This is in alpha in Trigger.io. Basic testing worked but waiting for release to document how to initiate a push.
