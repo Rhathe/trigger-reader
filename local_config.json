@@ -9,7 +9,7 @@
 		}
 	},
 	"android": {
-		"sdk": "",
+		"sdk": "/usr/local/android-sdk-linux",
 		"profiles": {
 			"DEFAULT": {
 				"keystore": "",

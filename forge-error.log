@@ -1,0 +1,464 @@
+2012-08-02 20:51:39,177 [   INFO] Forge tools running at version 3.3.5
+2012-08-02 20:51:39,209 [  DEBUG] Forge build tools version: 3.3.5
+2012-08-02 20:51:39,210 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-02 20:51:39,275 [  DEBUG] GET https://trigger.io/api/version_check/3/3/5/
+2012-08-02 20:51:40,086 [  DEBUG] Checking API response for success or error
+2012-08-02 20:51:40,086 [   INFO] Update result: you already have the latest tools
+2012-08-02 20:51:40,086 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-02 20:51:40,139 [  DEBUG] Checking API response for success or error
+2012-08-02 20:51:40,139 [  DEBUG] already authenticated via cookie - continuing
+2012-08-02 20:51:40,139 [  DEBUG] POST https://trigger.io/api/reload/buildevents/0cdcc9f2cefd11e1926712313d1adcbe
+2012-08-02 20:51:40,320 [  DEBUG] Checking API response for success or error
+2012-08-02 20:51:40,321 [  ERROR] Something went wrong that we didn't expect:
+2012-08-02 20:51:40,321 [  ERROR] Forge API call to reload/buildevents/0cdcc9f2cefd11e1926712313d1adcbe went wrong: There was no app matching your app uuid
+2012-08-02 20:51:40,321 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 323, in development_build
+    reload_result = remote.create_buildevent(app_config)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/remote.py", line 596, in create_buildevent
+    files={'config': StringIO(json.dumps(app_config))}
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/remote.py", line 196, in _api_post
+    _check_api_response_for_error(url, 'POST', resp)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/remote.py", line 67, in _check_api_response_for_error
+    raise RequestError(resp, error_message, errors=errors)
+RequestError: Forge API call to reload/buildevents/0cdcc9f2cefd11e1926712313d1adcbe went wrong: There was no app matching your app uuid
+
+2012-08-02 20:51:40,321 [  ERROR] See /home/ramon/Desktop/triggerProjects/trigger-reader/forge-error.log for more details
+2012-08-02 20:51:40,321 [  ERROR] Please contact support@trigger.io
+2012-08-02 21:10:25,525 [   INFO] Forge tools running at version 3.3.5
+2012-08-02 21:10:25,682 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-08-02 21:10:25,682 [  DEBUG] ignoring non-target directory __init__.py
+2012-08-02 21:10:25,682 [  DEBUG] ignoring non-target directory lib
+2012-08-02 21:10:25,682 [  DEBUG] ignoring non-target directory config.json
+2012-08-02 21:10:25,682 [  DEBUG] ignoring non-target directory reload
+2012-08-02 21:10:25,682 [  DEBUG] Enabled platforms: ['android']
+2012-08-02 21:10:25,682 [  DEBUG] Using configuration file value  for android.sdk
+2012-08-02 21:10:25,683 [  DEBUG] Forge build tools version: 3.3.5
+2012-08-02 21:10:25,683 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-02 21:10:25,683 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-02 21:10:26,606 [  DEBUG] Checking API response for success or error
+2012-08-02 21:10:26,606 [  DEBUG] already authenticated via cookie - continuing
+2012-08-02 21:10:26,606 [  DEBUG] POST https://trigger.io/api/track/
+2012-08-02 21:10:26,951 [  DEBUG] Checking API response for success or error
+2012-08-02 21:10:26,951 [  DEBUG] <ForgeTask (android)> running...
+2012-08-02 21:10:26,951 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'run_android': ('/home/ramon/Desktop/triggerProjects/trigger-reader/development',
+                         u'',
+                         None,
+                         True,
+                         None)},
+  'when': {'platform_is': 'android'}}]
+2012-08-02 21:10:26,951 [   INFO] Checking JavaScript files...
+2012-08-02 21:10:27,202 [   INFO] JavaScript check complete
+2012-08-02 21:10:27,202 [   INFO] Verifying your configuration settings...
+2012-08-02 21:10:27,202 [   INFO] Configuration settings check complete
+2012-08-02 21:10:27,202 [  DEBUG] Using configuration file value  for android.sdk
+2012-08-02 21:11:05,587 [  ERROR] Couldn't find Android SDK, please set this in your local config for this app.
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "android": {
+        "sdk": "/path/to/android-sdk"
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --android.sdk "/path/to/android-sdk"
+
+2012-08-02 21:11:05,587 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 398, in run
+    build_to_run=build_to_run,
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/customer_goals.py", line 122, in run_app
+    build_to_run.run()
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 333, in run
+    self._call_with_params(task_method, task_args)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 585, in run_android
+    path_info = _find_or_install_sdk(build)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 291, in _find_or_install_sdk
+    examples={"android.sdk": path.abspath("/path/to/android-sdk")},
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/lib.py", line 394, in local_config_problem
+    raise BASE_EXCEPTION(exc_message)
+ForgeError: Couldn't find Android SDK, please set this in your local config for this app.
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "android": {
+        "sdk": "/path/to/android-sdk"
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --android.sdk "/path/to/android-sdk"
+
+
+2012-08-02 21:12:15,988 [   INFO] Forge tools running at version 3.3.5
+2012-08-02 21:12:16,139 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-08-02 21:12:16,139 [  DEBUG] ignoring non-target directory __init__.py
+2012-08-02 21:12:16,139 [  DEBUG] ignoring non-target directory lib
+2012-08-02 21:12:16,140 [  DEBUG] ignoring non-target directory config.json
+2012-08-02 21:12:16,140 [  DEBUG] ignoring non-target directory reload
+2012-08-02 21:12:16,140 [  DEBUG] Enabled platforms: ['android']
+2012-08-02 21:12:16,140 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-02 21:12:16,140 [  DEBUG] Forge build tools version: 3.3.5
+2012-08-02 21:12:16,140 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-02 21:12:16,140 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-02 21:12:16,695 [  DEBUG] Checking API response for success or error
+2012-08-02 21:12:16,695 [  DEBUG] already authenticated via cookie - continuing
+2012-08-02 21:12:16,695 [  DEBUG] POST https://trigger.io/api/track/
+2012-08-02 21:12:16,829 [  DEBUG] Checking API response for success or error
+2012-08-02 21:12:16,829 [  DEBUG] <ForgeTask (android)> running...
+2012-08-02 21:12:16,829 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'run_android': ('/home/ramon/Desktop/triggerProjects/trigger-reader/development',
+                         u'/usr/local/android-sdk-linux',
+                         None,
+                         True,
+                         None)},
+  'when': {'platform_is': 'android'}}]
+2012-08-02 21:12:16,829 [   INFO] Checking JavaScript files...
+2012-08-02 21:12:17,017 [   INFO] JavaScript check complete
+2012-08-02 21:12:17,017 [   INFO] Verifying your configuration settings...
+2012-08-02 21:12:17,018 [   INFO] Configuration settings check complete
+2012-08-02 21:12:17,018 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-02 21:12:17,018 [   INFO] Starting ADB if not running
+2012-08-02 21:12:17,018 [  DEBUG] Running detached: /usr/local/android-sdk-linux/platform-tools/adb start-server
+2012-08-02 21:12:17,150 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 337, in _run_in_shell
+    proc = lib.PopenWithoutNewConsole(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/lib.py", line 156, in __init__
+    self._old_popen.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python2.7/subprocess.py", line 679, in __init__
+    errread, errwrite)
+  File "/usr/local/lib/python2.7/subprocess.py", line 1249, in _execute_child
+    raise child_exception
+OSError: [Errno 2] No such file or directory
+
+2012-08-02 21:12:17,151 [  ERROR] Something went wrong that we didn't expect:
+2012-08-02 21:12:17,151 [  ERROR] Exception running detached command: /usr/local/android-sdk-linux/platform-tools/adb start-server: [Errno 2] No such file or directory
+2012-08-02 21:12:17,151 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 398, in run
+    build_to_run=build_to_run,
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/customer_goals.py", line 122, in run_app
+    build_to_run.run()
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 333, in run
+    self._call_with_params(task_method, task_args)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 588, in run_android
+    run_detached([path_info.adb, 'start-server'], wait=True)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 377, in run_detached
+    raise ShellError(message="Exception running detached command: %s" % full_command, output=str(output))
+ShellError: Exception running detached command: /usr/local/android-sdk-linux/platform-tools/adb start-server: [Errno 2] No such file or directory
+
+2012-08-02 21:12:17,151 [  ERROR] See /home/ramon/Desktop/triggerProjects/trigger-reader/forge-error.log for more details
+2012-08-02 21:12:17,151 [  ERROR] Please contact support@trigger.io
+2012-08-02 21:13:13,898 [   INFO] Forge tools running at version 3.3.5
+2012-08-02 21:13:14,042 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-08-02 21:13:14,042 [  DEBUG] ignoring non-target directory __init__.py
+2012-08-02 21:13:14,042 [  DEBUG] ignoring non-target directory lib
+2012-08-02 21:13:14,042 [  DEBUG] ignoring non-target directory config.json
+2012-08-02 21:13:14,042 [  DEBUG] ignoring non-target directory reload
+2012-08-02 21:13:14,042 [  DEBUG] Enabled platforms: ['android']
+2012-08-02 21:13:14,042 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-02 21:13:14,042 [  DEBUG] Forge build tools version: 3.3.5
+2012-08-02 21:13:14,042 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-02 21:13:14,042 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-02 21:13:14,707 [  DEBUG] Checking API response for success or error
+2012-08-02 21:13:14,707 [  DEBUG] already authenticated via cookie - continuing
+2012-08-02 21:13:14,707 [  DEBUG] POST https://trigger.io/api/track/
+2012-08-02 21:13:15,107 [  DEBUG] Checking API response for success or error
+2012-08-02 21:13:15,107 [  DEBUG] <ForgeTask (android)> running...
+2012-08-02 21:13:15,107 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'run_android': ('/home/ramon/Desktop/triggerProjects/trigger-reader/development',
+                         u'/usr/local/android-sdk-linux',
+                         None,
+                         True,
+                         None)},
+  'when': {'platform_is': 'android'}}]
+2012-08-02 21:13:15,107 [   INFO] Checking JavaScript files...
+2012-08-02 21:13:15,240 [   INFO] JavaScript check complete
+2012-08-02 21:13:15,240 [   INFO] Verifying your configuration settings...
+2012-08-02 21:13:15,253 [   INFO] Configuration settings check complete
+2012-08-02 21:13:15,253 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-02 21:13:15,253 [   INFO] Starting ADB if not running
+2012-08-02 21:13:15,254 [  DEBUG] Running detached: /usr/local/android-sdk-linux/platform-tools/adb start-server
+2012-08-02 21:13:15,278 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 337, in _run_in_shell
+    proc = lib.PopenWithoutNewConsole(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/lib.py", line 156, in __init__
+    self._old_popen.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python2.7/subprocess.py", line 679, in __init__
+    errread, errwrite)
+  File "/usr/local/lib/python2.7/subprocess.py", line 1249, in _execute_child
+    raise child_exception
+OSError: [Errno 2] No such file or directory
+
+2012-08-02 21:13:15,278 [  ERROR] Something went wrong that we didn't expect:
+2012-08-02 21:13:15,279 [  ERROR] Exception running detached command: /usr/local/android-sdk-linux/platform-tools/adb start-server: [Errno 2] No such file or directory
+2012-08-02 21:13:15,279 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 398, in run
+    build_to_run=build_to_run,
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/customer_goals.py", line 122, in run_app
+    build_to_run.run()
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 333, in run
+    self._call_with_params(task_method, task_args)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 588, in run_android
+    run_detached([path_info.adb, 'start-server'], wait=True)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 377, in run_detached
+    raise ShellError(message="Exception running detached command: %s" % full_command, output=str(output))
+ShellError: Exception running detached command: /usr/local/android-sdk-linux/platform-tools/adb start-server: [Errno 2] No such file or directory
+
+2012-08-02 21:13:15,279 [  ERROR] See /home/ramon/Desktop/triggerProjects/trigger-reader/forge-error.log for more details
+2012-08-02 21:13:15,279 [  ERROR] Please contact support@trigger.io
+2012-08-03 00:00:32,328 [   INFO] Forge tools running at version 3.3.5
+2012-08-03 00:00:32,878 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-08-03 00:00:32,879 [  DEBUG] ignoring non-target directory __init__.py
+2012-08-03 00:00:32,879 [  DEBUG] ignoring non-target directory lib
+2012-08-03 00:00:32,879 [  DEBUG] ignoring non-target directory config.json
+2012-08-03 00:00:32,879 [  DEBUG] ignoring non-target directory reload
+2012-08-03 00:00:32,879 [  DEBUG] Enabled platforms: ['android']
+2012-08-03 00:00:32,879 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-03 00:00:32,925 [  DEBUG] Forge build tools version: 3.3.5
+2012-08-03 00:00:32,925 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-03 00:00:32,933 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-03 00:00:33,839 [  DEBUG] Checking API response for success or error
+2012-08-03 00:00:33,839 [  DEBUG] already authenticated via cookie - continuing
+2012-08-03 00:00:33,839 [  DEBUG] POST https://trigger.io/api/track/
+2012-08-03 00:00:33,921 [  DEBUG] Checking API response for success or error
+2012-08-03 00:00:33,925 [  DEBUG] <ForgeTask (android)> running...
+2012-08-03 00:00:33,925 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'run_android': ('/home/ramon/Desktop/triggerProjects/trigger-reader/development',
+                         u'/usr/local/android-sdk-linux',
+                         None,
+                         True,
+                         None)},
+  'when': {'platform_is': 'android'}}]
+2012-08-03 00:00:33,925 [   INFO] Checking JavaScript files...
+2012-08-03 00:00:34,398 [   INFO] JavaScript check complete
+2012-08-03 00:00:34,398 [   INFO] Verifying your configuration settings...
+2012-08-03 00:00:34,449 [   INFO] Configuration settings check complete
+2012-08-03 00:00:34,449 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-03 00:00:34,449 [   INFO] Starting ADB if not running
+2012-08-03 00:00:34,449 [  DEBUG] Running detached: /usr/local/android-sdk-linux/platform-tools/adb start-server
+2012-08-03 00:00:37,750 [  DEBUG] * daemon not running. starting it now on port 5037 *
+2012-08-03 00:00:37,751 [  DEBUG] * daemon started successfully *
+2012-08-03 00:00:37,751 [   INFO] Looking for Android device
+2012-08-03 00:00:37,751 [   INFO] No android device specified, defaulting to ????????????
+2012-08-03 00:00:37,751 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-03 00:00:39,363 [   INFO] Creating Android .apk file
+2012-08-03 00:00:39,366 [   INFO] Creating APK with aapt
+2012-08-03 00:00:39,366 [  DEBUG] Running: /usr/local/android-sdk-linux/platform-tools/aapt p -F /tmp/tmpvcRQyx -S development/android/res -M development/android/AndroidManifest.xml -I .template/lib/android-platform.apk -A development/android/assets -0 "" --rename-manifest-package io.trigger.forgeede9a9c2dd0511e1924712313d1adcbe -f development/android/output
+2012-08-03 00:00:39,875 [   INFO] Signing APK with a debug key
+2012-08-03 00:00:39,875 [  DEBUG] Running: java -jar .template/lib/apk-signer.jar --keystore .template/lib/debug.keystore --storepass android --keyalias androiddebugkey --keypass android --out /tmp/tmpZgCUo1 /tmp/tmpvcRQyx
+2012-08-03 00:00:41,801 [   INFO] Aligning apk
+2012-08-03 00:00:41,804 [  DEBUG] Running: /usr/local/android-sdk-linux/tools/zipalign -v 4 /tmp/tmpZgCUo1 /tmp/tmp2tmGim
+2012-08-03 00:00:41,894 [  DEBUG] Verifying alignment of /tmp/tmp2tmGim (4)...
+2012-08-03 00:00:41,894 [  DEBUG]       56 assets/forge/all.js (OK)
+2012-08-03 00:00:41,894 [  DEBUG]    22144 assets/forge/disable-frames.js (OK)
+2012-08-03 00:00:41,894 [  DEBUG]    22228 assets/src/css/demo.css (OK)
+2012-08-03 00:00:41,894 [  DEBUG]    23356 assets/src/css/jquery.mobile-1.1.0.min.css (OK)
+2012-08-03 00:00:41,894 [  DEBUG]    84112 assets/src/css/reset.css (OK)
+2012-08-03 00:00:41,894 [  DEBUG]    92132 assets/src/img/06-magnify.png (OK)
+2012-08-03 00:00:41,894 [  DEBUG]    95440 assets/src/img/166-newspaper.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]    95804 assets/src/img/20-gear2.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]    99056 assets/src/img/28-star.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   102240 assets/src/img/53-house.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   105200 assets/src/img/logo-forge.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   110716 assets/src/js/lib/backbone-min.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   126704 assets/src/js/lib/underscore-min.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   138676 assets/src/js/lib/zepto.min.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   159140 assets/src/js/demo.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   161240 assets/src/js/jquery-1.7.1.min.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   255180 assets/src/js/jquery.mobile-1.1.0.min.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   346180 assets/src/js/main.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   346288 assets/src/js/models.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   347168 assets/src/js/routes.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   347872 assets/src/js/utils.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   348316 assets/src/js/views.js (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   351512 assets/src/README.rst (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   351976 assets/src/index.html (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   352864 res/drawable/close.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   354600 res/drawable/facebook_icon.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   354804 res/drawable/splash.png (OK)
+2012-08-03 00:00:41,895 [  DEBUG]   373645 res/layout/external_webview.xml (OK - compressed)
+2012-08-03 00:00:41,898 [  DEBUG]   374217 res/layout/splashscreen.xml (OK - compressed)
+2012-08-03 00:00:41,898 [  DEBUG]   374596 res/raw/keystore.bks (OK)
+2012-08-03 00:00:41,898 [  DEBUG]   541042 AndroidManifest.xml (OK - compressed)
+2012-08-03 00:00:41,898 [  DEBUG]   542548 classes.dex (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1335256 resources.arsc (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1340768 res/drawable-hdpi/close.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1342676 res/drawable-hdpi/facebook_icon.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1342904 res/drawable-hdpi/icon.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1346928 res/drawable-ldpi/close.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1348272 res/drawable-ldpi/facebook_icon.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1348504 res/drawable-ldpi/icon.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1350100 res/drawable-mdpi/icon.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1352360 res/drawable-xhdpi/close.png (OK)
+2012-08-03 00:00:41,898 [  DEBUG]  1355019 META-INF/MANIFEST.MF (OK - compressed)
+2012-08-03 00:00:41,898 [  DEBUG]  1356494 META-INF/CERT.SF (OK - compressed)
+2012-08-03 00:00:41,898 [  DEBUG]  1357999 META-INF/CERT.RSA (OK - compressed)
+2012-08-03 00:00:41,898 [  DEBUG] Verification succesful
+2012-08-03 00:00:41,898 [   INFO] Installing apk
+2012-08-03 00:01:41,927 [  DEBUG] ADB hung, terminating process
+2012-08-03 00:01:41,927 [  DEBUG] Running: killall adb
+2012-08-03 00:01:41,937 [  DEBUG] Running: killall -9 adb
+2012-08-03 00:01:41,959 [  DEBUG] Running detached: /usr/local/android-sdk-linux/platform-tools/adb start-server
+2012-08-03 00:01:44,977 [  DEBUG] * daemon not running. starting it now on port 5037 *
+2012-08-03 00:01:44,980 [  DEBUG] * daemon started successfully *
+2012-08-03 00:01:44,980 [  ERROR] Communication with adb failed: error: insufficient permissions for device
+- waiting for device -
+error: protocol fault (no status)
+
+2012-08-03 00:01:45,073 [  ERROR] 
+2012-08-03 00:01:45,073 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 398, in run
+    build_to_run=build_to_run,
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/customer_goals.py", line 122, in run_app
+    build_to_run.run()
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 333, in run
+    self._call_with_params(task_method, task_args)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 641, in run_android
+    proc_std = _run_adb([path_info.adb, '-s', chosen_device, 'install', '-r', out_apk_name], 60, path_info)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 71, in _run_adb
+    raise AndroidError
+AndroidError
+
+2012-08-03 00:02:44,567 [   INFO] Forge tools running at version 3.3.5
+2012-08-03 00:02:44,700 [  DEBUG] ignoring non-target directory platform_version.txt
+2012-08-03 00:02:44,700 [  DEBUG] ignoring non-target directory __init__.py
+2012-08-03 00:02:44,700 [  DEBUG] ignoring non-target directory lib
+2012-08-03 00:02:44,701 [  DEBUG] ignoring non-target directory config.json
+2012-08-03 00:02:44,701 [  DEBUG] ignoring non-target directory reload
+2012-08-03 00:02:44,701 [  DEBUG] Enabled platforms: ['android']
+2012-08-03 00:02:44,701 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-03 00:02:44,701 [  DEBUG] Forge build tools version: 3.3.5
+2012-08-03 00:02:44,701 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2012-08-03 00:02:44,701 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2012-08-03 00:02:45,411 [  DEBUG] Checking API response for success or error
+2012-08-03 00:02:45,411 [  DEBUG] already authenticated via cookie - continuing
+2012-08-03 00:02:45,411 [  DEBUG] POST https://trigger.io/api/track/
+2012-08-03 00:02:45,548 [  DEBUG] Checking API response for success or error
+2012-08-03 00:02:45,549 [  DEBUG] <ForgeTask (android)> running...
+2012-08-03 00:02:45,549 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'lint_javascript': ()}},
+ {'do': {'check_local_config_schema': ()}},
+ {'do': {'run_android': ('/home/ramon/Desktop/triggerProjects/trigger-reader/development',
+                         u'/usr/local/android-sdk-linux',
+                         None,
+                         True,
+                         None)},
+  'when': {'platform_is': 'android'}}]
+2012-08-03 00:02:45,549 [   INFO] Checking JavaScript files...
+2012-08-03 00:02:45,740 [   INFO] JavaScript check complete
+2012-08-03 00:02:45,740 [   INFO] Verifying your configuration settings...
+2012-08-03 00:02:45,740 [   INFO] Configuration settings check complete
+2012-08-03 00:02:45,740 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-03 00:02:45,740 [   INFO] Starting ADB if not running
+2012-08-03 00:02:45,740 [  DEBUG] Running detached: /usr/local/android-sdk-linux/platform-tools/adb start-server
+2012-08-03 00:02:45,740 [   INFO] Looking for Android device
+2012-08-03 00:02:45,740 [   INFO] No android device specified, defaulting to ????????????
+2012-08-03 00:02:45,741 [  DEBUG] Using configuration file value /usr/local/android-sdk-linux for android.sdk
+2012-08-03 00:02:45,874 [   INFO] Creating Android .apk file
+2012-08-03 00:02:45,874 [   INFO] Creating APK with aapt
+2012-08-03 00:02:45,875 [  DEBUG] Running: /usr/local/android-sdk-linux/platform-tools/aapt p -F /tmp/tmp9hHd4g -S development/android/res -M development/android/AndroidManifest.xml -I .template/lib/android-platform.apk -A development/android/assets -0 "" --rename-manifest-package io.trigger.forgeede9a9c2dd0511e1924712313d1adcbe -f development/android/output
+2012-08-03 00:02:46,061 [   INFO] Signing APK with a debug key
+2012-08-03 00:02:46,064 [  DEBUG] Running: java -jar .template/lib/apk-signer.jar --keystore .template/lib/debug.keystore --storepass android --keyalias androiddebugkey --keypass android --out /tmp/tmp4BzhS0 /tmp/tmp9hHd4g
+2012-08-03 00:02:46,690 [   INFO] Aligning apk
+2012-08-03 00:02:46,691 [  DEBUG] Running: /usr/local/android-sdk-linux/tools/zipalign -v 4 /tmp/tmp4BzhS0 /tmp/tmp4dheI7
+2012-08-03 00:02:46,705 [  DEBUG] Verifying alignment of /tmp/tmp4dheI7 (4)...
+2012-08-03 00:02:46,707 [  DEBUG]       56 assets/forge/all.js (OK)
+2012-08-03 00:02:46,707 [  DEBUG]    22144 assets/forge/disable-frames.js (OK)
+2012-08-03 00:02:46,707 [  DEBUG]    22228 assets/src/css/demo.css (OK)
+2012-08-03 00:02:46,707 [  DEBUG]    23356 assets/src/css/jquery.mobile-1.1.0.min.css (OK)
+2012-08-03 00:02:46,707 [  DEBUG]    84112 assets/src/css/reset.css (OK)
+2012-08-03 00:02:46,708 [  DEBUG]    92132 assets/src/img/06-magnify.png (OK)
+2012-08-03 00:02:46,708 [  DEBUG]    95440 assets/src/img/166-newspaper.png (OK)
+2012-08-03 00:02:46,708 [  DEBUG]    95804 assets/src/img/20-gear2.png (OK)
+2012-08-03 00:02:46,708 [  DEBUG]    99056 assets/src/img/28-star.png (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   102240 assets/src/img/53-house.png (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   105200 assets/src/img/logo-forge.png (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   110716 assets/src/js/lib/backbone-min.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   126704 assets/src/js/lib/underscore-min.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   138676 assets/src/js/lib/zepto.min.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   159140 assets/src/js/demo.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   161240 assets/src/js/jquery-1.7.1.min.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   255180 assets/src/js/jquery.mobile-1.1.0.min.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   346180 assets/src/js/main.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   346288 assets/src/js/models.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   347168 assets/src/js/routes.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   347872 assets/src/js/utils.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   348316 assets/src/js/views.js (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   351512 assets/src/README.rst (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   351976 assets/src/index.html (OK)
+2012-08-03 00:02:46,708 [  DEBUG]   352864 res/drawable/close.png (OK)
+2012-08-03 00:02:46,714 [  DEBUG]   354600 res/drawable/facebook_icon.png (OK)
+2012-08-03 00:02:46,714 [  DEBUG]   354804 res/drawable/splash.png (OK)
+2012-08-03 00:02:46,714 [  DEBUG]   373645 res/layout/external_webview.xml (OK - compressed)
+2012-08-03 00:02:46,714 [  DEBUG]   374217 res/layout/splashscreen.xml (OK - compressed)
+2012-08-03 00:02:46,714 [  DEBUG]   374596 res/raw/keystore.bks (OK)
+2012-08-03 00:02:46,714 [  DEBUG]   541042 AndroidManifest.xml (OK - compressed)
+2012-08-03 00:02:46,714 [  DEBUG]   542548 classes.dex (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1335256 resources.arsc (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1340768 res/drawable-hdpi/close.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1342676 res/drawable-hdpi/facebook_icon.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1342904 res/drawable-hdpi/icon.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1346928 res/drawable-ldpi/close.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1348272 res/drawable-ldpi/facebook_icon.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1348504 res/drawable-ldpi/icon.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1350100 res/drawable-mdpi/icon.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1352360 res/drawable-xhdpi/close.png (OK)
+2012-08-03 00:02:46,715 [  DEBUG]  1355019 META-INF/MANIFEST.MF (OK - compressed)
+2012-08-03 00:02:46,731 [  DEBUG]  1356494 META-INF/CERT.SF (OK - compressed)
+2012-08-03 00:02:46,734 [  DEBUG]  1357999 META-INF/CERT.RSA (OK - compressed)
+2012-08-03 00:02:46,734 [  DEBUG] Verification succesful
+2012-08-03 00:02:46,734 [   INFO] Installing apk
+2012-08-03 00:03:46,759 [  DEBUG] ADB hung, terminating process
+2012-08-03 00:03:46,759 [  DEBUG] Running: killall adb
+2012-08-03 00:03:46,805 [  DEBUG] Running: killall -9 adb
+2012-08-03 00:03:46,845 [  DEBUG] Running detached: /usr/local/android-sdk-linux/platform-tools/adb start-server
+2012-08-03 00:03:49,904 [  DEBUG] * daemon not running. starting it now on port 5037 *
+2012-08-03 00:03:49,904 [  DEBUG] * daemon started successfully *
+2012-08-03 00:03:49,907 [  ERROR] Communication with adb failed: error: insufficient permissions for device
+- waiting for device -
+error: protocol fault (no status)
+
+2012-08-03 00:03:49,918 [  ERROR] 
+2012-08-03 00:03:49,918 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 398, in run
+    build_to_run=build_to_run,
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/customer_goals.py", line 122, in run_app
+    build_to_run.run()
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 333, in run
+    self._call_with_params(task_method, task_args)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 641, in run_android
+    proc_std = _run_adb([path_info.adb, '-s', chosen_device, 'install', '-r', out_apk_name], 60, path_info)
+  File "/home/ramon/Desktop/triggerProjects/trigger-reader/.template/generate_dynamic/android_tasks.py", line 71, in _run_adb
+    raise AndroidError
+AndroidError
+

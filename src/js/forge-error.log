@@ -1,0 +1,13 @@
+2012-08-02 21:07:45,709 [   INFO] Forge tools running at version 3.3.5
+2012-08-02 21:07:45,716 [  ERROR] No folder called 'development' found. You're trying to run your app but you haven't built it yet!
+Try forge build first.
+2012-08-02 21:07:45,716 [  DEBUG] Traceback (most recent call last):
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 385, in run
+    _assert_have_development_folder()
+  File "/home/ramon/Desktop/TriggerToolkit/build-tools/forge/main.py", line 79, in _assert_have_development_folder
+    raise ForgeError(message)
+ForgeError: No folder called 'development' found. You're trying to run your app but you haven't built it yet!
+Try forge build first.
+

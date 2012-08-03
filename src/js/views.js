@@ -127,3 +127,128 @@ Demo.Views.Item = Demo.Views.Page.extend({
 		return this;
 	}
 });
+
+Demo.Views.Settings = Demo.Views.Page.extend({
+
+	events: Demo.Utils.click_or_tap({
+		"#back.feed-even": "go_back",
+		"#set1.feed-even": "alert1",
+		"#set2.feed-even": "alert2"
+	}),
+
+	initialize: function() {
+		this.render();
+	},
+
+	go_back: function() {
+		Demo.router.navigate("", true);
+	},
+	
+	alert1: function() {
+		alert("You've selected Setting 1");
+	},
+	
+	alert2: function() {
+		alert("You've selected Setting 2");
+	},
+	
+	render: function() {
+
+		$(this.el).append('<div id="back", class="feed-even">Back</div>');
+		$(this.el).append('<div id="set1", class="feed-even">Setting 1</div>');
+		$(this.el).append('<div id="set2", class="feed-even">Setting 2</div>');
+		
+		return this;
+	}
+});
+
+Demo.Views.Sections = Demo.Views.Page.extend({
+
+	events: Demo.Utils.click_or_tap({
+		"#back.feed-even": "go_back",
+		"#weather.feed-even": "weather",
+		"#sports.feed-even": "sports",
+		"#errythingelse.feed-even": "errythingelse"
+	}),
+
+	initialize: function() {
+		this.render();
+	},
+
+	go_back: function() {
+		Demo.router.navigate("", true);
+	},
+	
+	weather: function() {
+		alert("Sunny?");
+	},
+	
+	sports: function() {
+		alert("The piggers drove the bat ball down to the basket net. GOAL!");
+	},
+	
+	errythingelse: function() {
+		alert("Bruce Wayne is Batman");
+	},
+	
+	render: function() {
+
+		$(this.el).append('<div id="back", class="feed-even">Back</div>');
+		$(this.el).append('<div id="weather", class="feed-even">Weather</div>');
+		$(this.el).append('<div id="sports", class="feed-even">Sports</div>');
+		$(this.el).append('<div id="errythingelse", class="feed-even">Errything Else</div>');
+		
+		return this;
+	}
+});
+
+Demo.Views.Search = Demo.Views.Page.extend({
+
+	events: Demo.Utils.click_or_tap({
+		"#back.feed-even": "go_back"
+	}),
+
+	initialize: function() {
+		this.render();
+	},
+
+	go_back: function() {
+		Demo.router.navigate("", true);
+	},
+	
+	render: function() {
+
+		$(this.el).append('<div id="back", class="feed-even">Back</div>');
+		$(this.el).append('<div id="set1", class="feed-even">Search Later</div>');
+		
+		return this;
+	}
+});
+
+Demo.Views.Favorites = Demo.Views.Page.extend({
+
+	events: Demo.Utils.click_or_tap({
+		"#back.feed-even": "go_back",
+		"#fav.feed-even": "fav"
+	}),
+
+	initialize: function() {
+		this.render();
+	},
+
+	go_back: function() {
+		Demo.router.navigate("", true);
+	},
+	
+	fav: function() {
+		alert("Orange Soda");
+	},
+	
+	render: function() {
+
+		$(this.el).append('<div id="back", class="feed-even">Back</div>');
+		$(this.el).append('<div id="fav", class="feed-even">Favorite Thing</div>');
+		
+		return this;
+	}
+});

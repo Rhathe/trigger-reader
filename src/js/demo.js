@@ -16,11 +16,10 @@ var Demo = {
 			index: 0
 		}, function (button) {
 			button.onPressed.addListener(function () {
-				alert("Front Page");
+				Demo.router.navigate("", true);
 			});
 			// This is the default button, activate it immediately
 			button.setActive();
-			alert("Front Page");
 		});
 
 		// Sections button
@@ -30,7 +29,7 @@ var Demo = {
 			index: 1
 		}, function (button) {
 			button.onPressed.addListener(function () {
-				alert("Sections");
+				Demo.router.navigate("sections", true);
 			});
 		});
 
@@ -41,7 +40,7 @@ var Demo = {
 			index: 2
 		}, function (button) {
 			button.onPressed.addListener(function () {
-				alert("Search");
+				Demo.router.navigate("searchrt", true);
 			});
 		});
 
@@ -52,7 +51,7 @@ var Demo = {
 			index: 3
 		}, function (button) {
 			button.onPressed.addListener(function () {
-				alert("Favorites");
+				Demo.router.navigate("favorites", true);
 			});
 		});
 
@@ -63,7 +62,7 @@ var Demo = {
 			index: 4
 		}, function (button) {
 			button.onPressed.addListener(function () {
-				alert("Settings");
+				Demo.router.navigate("settings", true);
 			});
 		});
 
@@ -78,7 +77,8 @@ var Demo = {
 		function showIndex(data) {
 			// Save away initial data, stripping off the 'entries' element in the HuffPo feed
 			Demo.items = new Demo.Collections.Items(data['entries']);
-
+			Demo.currPage = 0;
+			
 			// Set up Backbone
 			Demo.router = new Demo.Router();
 			Backbone.history.start();
